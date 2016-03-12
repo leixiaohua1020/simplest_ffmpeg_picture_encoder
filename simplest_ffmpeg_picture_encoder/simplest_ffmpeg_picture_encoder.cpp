@@ -84,7 +84,7 @@ int main(int argc, char* argv[])
 	pCodecCtx = video_st->codec;
 	pCodecCtx->codec_id = fmt->video_codec;
 	pCodecCtx->codec_type = AVMEDIA_TYPE_VIDEO;
-	pCodecCtx->pix_fmt = PIX_FMT_YUVJ420P;
+	pCodecCtx->pix_fmt = AV_PIX_FMT_YUVJ420P;
 
 	pCodecCtx->width = in_w;  
 	pCodecCtx->height = in_h;
@@ -123,9 +123,9 @@ int main(int argc, char* argv[])
 		printf("Could not read input file.");
 		return -1;
 	}
-	picture->data[0] = picture_buf;  // ÁÁ¶ÈY
-	picture->data[1] = picture_buf+ y_size;  // U 
-	picture->data[2] = picture_buf+ y_size*5/4; // V
+	picture->data[0] = picture_buf;              // Y
+	picture->data[1] = picture_buf+ y_size;      // U 
+	picture->data[2] = picture_buf+ y_size*5/4;  // V
 
 	//Encode
 	ret = avcodec_encode_video2(pCodecCtx, &pkt,picture, &got_picture);
