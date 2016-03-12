@@ -7,8 +7,10 @@ leixiaohua1020@126.com
 Communication University of China / Digital TV Technology
 http://blog.csdn.net/leixiaohua1020
 
+
 本程序实现了YUV420P像素数据编码为JPEG图片。是最简单的FFmpeg编码方面的教程。
 通过学习本例子可以了解FFmpeg的编码流程。
+
 
 This software encode YUV420P data to JPEG files.
 It the simplest picture encoder based on FFmpeg.
